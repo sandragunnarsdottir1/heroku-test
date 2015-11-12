@@ -1,6 +1,7 @@
 'use strict';
 var pg = require('pg');
-var conString = 'postgres://sandragunnarsdottir:@localhost/nodegoat';
+//var conString = 'postgres://sandragunnarsdottir:@localhost/nodegoat';
+var conString = 'postgres://bcncokaggomsob:d28sQoNQKvoAVEV9Tlps0RDBZC@ec2-107-21-219-235.compute-1.amazonaws.com:5432/decai7npeph56c?ssl=true'
 
 exports.queryDb = function(queryStr, parameters, then) {
   pg.connect(conString, function(err, client, done) {
