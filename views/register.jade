@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  p Vertu fjélagi Björns Jónssonar!
+  
+  if msg
+    p= msg
+  else
+    form(method="post")
+      fieldset.form-group
+        label(for="username") Nafn
+        input(id="username" type="text" placeholder="nafn" name="name").form-control
+      fieldset.form-group  
+        label(for="username") Notendanafn
+        input(id="username" type="text" placeholder="notendanafn" name="username").form-control
+      fieldset.form-group
+        label(for="password") Lykilorð
+        input(id="password" type="password" name="password" placeholder="lykilorð").form-control
+      input(type="submit" value="Skrá mig í félagið").form-control

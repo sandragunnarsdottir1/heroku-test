@@ -1,0 +1,15 @@
+extends layout
+block content
+
+	if session && session.user
+		if results
+			each result in results
+				.entry
+					.left
+						.bold
+							p= 'Dags: ' + result.create_date
+							p= 'Notandi: ' + result.username
+					.right
+						.bold
+							p= 'Færsla: '
+						p= result.entry_text

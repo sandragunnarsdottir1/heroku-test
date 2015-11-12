@@ -1,0 +1,13 @@
+extends layout
+
+block content
+
+  if session && session.user
+    form(method="post")
+        label(for="entry") Færsla 
+        fieldset.form-group
+          
+          textarea(id="entry" name="entry").xss-enabler
+        input(type="submit" value="Vista").form-control
+      
+    .xss-holder

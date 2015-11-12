@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  p Skráðu þig inn í frábæra fjélagið.
+  if msg
+    p= msg
+  
+  form(method="post")
+    fieldset.form-group
+      label(for="username") Notendanafn
+      input(id="username" type="text" placeholder="notendanafn" name="username").form-control
+    fieldset.form-group
+      label(for="password") Lykilorð
+      input(id="password" type="password" name="password" placeholder="lykilorð").form-control
+    input(type="submit").form-control

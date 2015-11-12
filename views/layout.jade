@@ -1,0 +1,33 @@
+doctype html
+html(lang="is")
+  head
+    title= title
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet")
+    link(rel='stylesheet' href='/dist/stylesheets/styles.css')
+  body
+    if session && session.user
+      p Skráður inn sem 
+        span= session.user.name
+    header
+      .left
+        h1 Vinafjélag Björns Jónssonar
+        ul.list-inline
+          li: a(href='/').btn Forsíða
+          if session && session.user
+            li: a(href='/newentry').btn Ný færsla
+          if !session || !session.user
+            li: a(href='/login').btn Innskrá
+          if session && session.user
+            li: a(href='/logout').btn Útskrá
+          if !session || !session.user
+            li: a(href='/register').btn Nýskrá
+          if session && session.user
+            li: a(href='/wall').btn Veggur
+
+      .right
+        img(src='/images/bjorn.jpg')
+      
+    main
+      block content
+    
+  script(src="/javascripts/frontend.js")
